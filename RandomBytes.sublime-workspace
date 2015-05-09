@@ -1,0 +1,282 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ear",
+				"ears_y"
+			],
+			[
+				"ea",
+				"ears_sep"
+			],
+			[
+				"color",
+				"color_rgb"
+			],
+			[
+				"h",
+				"h2	Tag"
+			],
+			[
+				"pr",
+				"pred"
+			],
+			[
+				"ref",
+				"reffile"
+			],
+			[
+				"stop",
+				"stoppred"
+			],
+			[
+				"star",
+				"startpred"
+			],
+			[
+				"start",
+				"startlist"
+			],
+			[
+				"pred",
+				"predfile"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"fil",
+				"filter_pov"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/bongotastic/Dropbox/work/outputs/workshops/art 1/test3.py",
+			"settings":
+			{
+				"buffer_size": 575,
+				"line_ending": "Unix",
+				"name": "'''"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430958406/bluenose/users/faculty/cblouin/public_html/labblouin/index.php",
+		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430958209/bluenose/users/faculty/cblouin/public_html/labblouin/programming_art.php",
+		"/Users/bongotastic/Library/Application Support/Sublime Text 2/Packages/User/sftp_servers/bluenose",
+		"/Users/bongotastic/Dropbox/work/outputs/workshops/art 1/graphics.py",
+		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430938238/bluenose/users/faculty/cblouin/public_html/labblouin/programming_art.php",
+		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430924690/bluenose/users/faculty/cblouin/public_html/labblouin/teaching.php",
+		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430921486/bluenose/users/faculty/cblouin/public_html/labblouin/publications.php",
+		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430919448/bluenose/users/faculty/cblouin/public_html/labblouin/people.php",
+		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430918676/bluenose/users/faculty/cblouin/public_html/labblouin/labblouin.css",
+		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430918779/bluenose/users/faculty/cblouin/public_html/labblouin/index.php",
+		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430918833/bluenose/users/faculty/cblouin/public_html/labblouin/header.php",
+		"/Users/bongotastic/Dropbox/work/Daedalus/Consulting/NURS/p_outcome.1.dot",
+		"/Users/bongotastic/Dropbox/work/Daedalus/Consulting/NURS/p_outcome.5.dot",
+		"/Users/bongotastic/Dropbox/work/Daedalus/Consulting/NURS/p_outcome.5.png",
+		"/Users/bongotastic/Dropbox/work/courses/BIOC4010/2015/web/lab6/inclass.py",
+		"/Users/bongotastic/Dropbox/work/admin/AIO/McAlister2015/Zhang:Ji/ji.dsms.c",
+		"/Users/bongotastic/Dropbox/work/courses/BIOC4010/2015/web/lab5/lab5/NC_003997.fna",
+		"/Users/bongotastic/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/bongotastic/Dropbox/work/courses/BIOC4010/2015/web/lab4/index.html",
+		"/Users/bongotastic/Dropbox/work/courses/BIOC4010/2015/web/style.css",
+		"/Users/bongotastic/Desktop/scratch.html",
+		"/Users/bongo/Sites/darknet/scripts/gamelogic.js",
+		"/Users/bongo/Sites/darknet/server/getGroupList.php",
+		"/Users/bongo/Sites/darknet/css/master.css",
+		"/Users/bongo/Sites/darknet/testurls.txt",
+		"/Users/bongo/Sites/darknet/scripts/jquery-1.9.1.js",
+		"/Users/bongo/Sites/darknet/index.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/bongo/Sites/darknet,-*.txt,-jquery-1.9.1.js",
+			"/Users/bongo/Sites/darknet",
+			"*.js"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ResearchGate<",
+			"print(",
+			"requ",
+			"data",
+			"@Build",
+			"getKnownGroups",
+			"false",
+			"newoperation.php",
+			"vizU",
+			"include",
+			"vizU"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"RG<"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/bongotastic/Dropbox/work/outputs/workshops/art 1/test3.py",
+					"settings":
+					{
+						"buffer_size": 575,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								193,
+								193
+							]
+						],
+						"settings":
+						{
+							"auto_name": "'''",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.sftp":
+	{
+		"height": 124.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"dom",
+				"scripts/DOMstructures.js"
+			],
+			[
+				"gamelo",
+				"scripts/gamelogic.js"
+			],
+			[
+				"game",
+				"scripts/gamelogic.js"
+			],
+			[
+				"",
+				"index.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 251.0,
+	"status_bar_visible": true
+}

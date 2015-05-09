@@ -1,5 +1,5 @@
 '''
-    Test art - Python.
+    Random triangle art - Python.
     cblouin@dal.ca
 '''
 # Import everything from Graphics
@@ -19,7 +19,8 @@ def RandomColor():
 win = GraphWin('Test 1', 600, 600)
 
 # repeat something 40 times
-for t in range(40):
+number_of_triangle = 40
+for t in range( number_of_triangle ):
 	# Random triangle
 	poly = Rectangle( RandomPoint(), RandomPoint() )
 	poly.setFill( RandomColor() )

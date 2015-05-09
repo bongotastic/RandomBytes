@@ -4,6 +4,8 @@
 '''
 # Import everything from Graphics
 from graphics import *
+
+# Import randint from random
 from random import randint
 
 # This function generate a random RGB color

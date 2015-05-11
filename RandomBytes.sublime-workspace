@@ -56,10 +56,13 @@
 	"buffers":
 	[
 		{
+			"contents": "",
 			"file": "/Users/bongotastic/Dropbox/work/outputs/workshops/art 1/test3.py",
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
-				"buffer_size": 575,
+				"buffer_size": 0,
 				"line_ending": "Unix",
 				"name": "'''"
 			}
@@ -173,15 +176,15 @@
 					"file": "/Users/bongotastic/Dropbox/work/outputs/workshops/art 1/test3.py",
 					"settings":
 					{
-						"buffer_size": 575,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								193,
-								193
+								0,
+								0
 							]
 						],
 						"settings":

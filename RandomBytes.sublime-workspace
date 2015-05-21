@@ -67,7 +67,7 @@
 			"file": "ProgAsArt/CoordGame.py",
 			"settings":
 			{
-				"buffer_size": 1590,
+				"buffer_size": 1592,
 				"line_ending": "Unix",
 				"name": "'''"
 			}
@@ -181,15 +181,15 @@
 					"file": "ProgAsArt/CoordGame.py",
 					"settings":
 					{
-						"buffer_size": 1590,
+						"buffer_size": 1592,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								771,
-								771
+								501,
+								501
 							]
 						],
 						"settings":
@@ -198,10 +198,11 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 439.0,
+						"translation.y": 187.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

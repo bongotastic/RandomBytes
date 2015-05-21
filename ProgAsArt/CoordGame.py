@@ -27,8 +27,8 @@ def Feedback( tgt, guess ):
 # Main game logic
 
 # A window
-width = 600
-height = 600
+width = 1000
+height = 1000
 win = GraphWin('Coordinate Guessing Game', width, height)
 
 score = 0

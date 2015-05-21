@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"la",
+				"label_score"
+			],
+			[
+				"label_",
+				"label_x"
+			],
+			[
 				"ear",
 				"ears_y"
 			],
@@ -56,13 +64,10 @@
 	"buffers":
 	[
 		{
-			"contents": "",
-			"file": "/Users/bongotastic/Dropbox/work/outputs/workshops/art 1/test3.py",
-			"file_size": -1,
-			"file_write_time": -1,
+			"file": "ProgAsArt/CoordGame.py",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1590,
 				"line_ending": "Unix",
 				"name": "'''"
 			}
@@ -173,18 +178,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/bongotastic/Dropbox/work/outputs/workshops/art 1/test3.py",
+					"file": "ProgAsArt/CoordGame.py",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1590,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								771,
+								771
 							]
 						],
 						"settings":
@@ -196,7 +201,7 @@
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 439.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

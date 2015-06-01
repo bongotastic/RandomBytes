@@ -16,7 +16,7 @@ def RandomColor():
 
 
 # Build a window
-win = GraphWin('Test 1', 600, 600)
+win = GraphWin('Random Boxes', 600, 600)
 
 # repeat something 40 times
 number_of_triangle = 40

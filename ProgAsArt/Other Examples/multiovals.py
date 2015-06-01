@@ -13,7 +13,7 @@ from random import randint
 win = GraphWin('Test 1', 600, 600)
 win.setBackground('white')
 
-# Repeate someting a number of times
+# Repeat someting a number of times
 for repeat in range (10):
 	poly = Oval( Point(50 + (repeat*50) ,50), Point(100 + (repeat*50), 550) )
 	poly.setFill('blue')

@@ -7,10 +7,9 @@
 '''
 # Import everything from Graphics
 from graphics import *
-from random import randint
 
 # Build a window
-win = GraphWin('Test 1', 600, 600)
+win = GraphWin('A Dot', 600, 600)
 win.setBackground('white')
 
 # Draw one circle

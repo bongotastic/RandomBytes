@@ -25,8 +25,8 @@ win = GraphWin('Tiles!', width, height)
 win.setBackground('black')
 
 # Build the tile pattern
-n_row = width / boxesize
-n_col = height / boxesize
+n_row = int(width / boxesize)
+n_col = int(height / boxesize)
 
 for col in range(n_col):
 	# Coordinate

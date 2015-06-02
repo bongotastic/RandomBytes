@@ -35,14 +35,14 @@ score = 0
 
 # Labels
 label_x = Text(Point(30,20), 'x=%d'%(0))
-label_x.setSize(20)
+label_x.setSize(12)
 label_x.draw(win)
 label_y = Text(Point(90,20), 'y=%d'%(0))
-label_y.setSize(20)
+label_y.setSize(12)
 label_y.draw(win)
 
 label_score = Text( Point(width-60, height-20), 'Error=%d'%(score) )
-label_score.setSize(20)
+label_score.setSize(12)
 label_score.draw(win)
 
 for iteration in range(6):
@@ -70,9 +70,9 @@ for iteration in range(6):
 name = 'San'
 if score < 1000:
 	name = 'Sensei'
-if score < 500:
+if score < 300:
 	name = 'Ninja'
-if score < 250:
+if score < 120:
 	name = 'Grand Master'
 
 

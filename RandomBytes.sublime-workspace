@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"la",
+				"label_score"
+			],
+			[
+				"label_",
+				"label_x"
+			],
+			[
 				"ear",
 				"ears_y"
 			],
@@ -55,6 +63,18 @@
 	},
 	"buffers":
 	[
+<<<<<<< HEAD
+=======
+		{
+			"file": "ProgAsArt/CoordGame.py",
+			"settings":
+			{
+				"buffer_size": 1592,
+				"line_ending": "Unix",
+				"name": "'''"
+			}
+		}
+>>>>>>> origin/master
 	],
 	"build_system": "",
 	"command_palette":
@@ -162,6 +182,40 @@
 		{
 			"sheets":
 			[
+<<<<<<< HEAD
+=======
+				{
+					"buffer": 0,
+					"file": "ProgAsArt/CoordGame.py",
+					"settings":
+					{
+						"buffer_size": 1592,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								501,
+								501
+							]
+						],
+						"settings":
+						{
+							"auto_name": "'''",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 187.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+>>>>>>> origin/master
 			]
 		}
 	],

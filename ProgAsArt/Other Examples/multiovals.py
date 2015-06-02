@@ -7,7 +7,6 @@
 '''
 # Import everything from Graphics
 from graphics import *
-from random import randint
 
 # Build a window
 win = GraphWin('Test 1', 600, 600)

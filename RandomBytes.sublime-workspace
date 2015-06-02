@@ -55,15 +55,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/Users/bongotastic/Dropbox/work/outputs/workshops/art 1/test3.py",
-			"settings":
-			{
-				"buffer_size": 575,
-				"line_ending": "Unix",
-				"name": "'''"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -89,6 +80,10 @@
 	},
 	"file_history":
 	[
+		"/Users/bongotastic/Git/RandomBytes/ProgAsArt/bubblelace.py",
+		"/Users/bongotastic/Git/RandomBytes/ProgAsArt/onecircle.py",
+		"/Users/bongotastic/Desktop/scratch.txt",
+		"/Users/bongotastic/Dropbox/work/outputs/workshops/art 1/test3.py",
 		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430958406/bluenose/users/faculty/cblouin/public_html/labblouin/index.php",
 		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430958209/bluenose/users/faculty/cblouin/public_html/labblouin/programming_art.php",
 		"/Users/bongotastic/Library/Application Support/Sublime Text 2/Packages/User/sftp_servers/bluenose",
@@ -165,39 +160,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/Users/bongotastic/Dropbox/work/outputs/workshops/art 1/test3.py",
-					"settings":
-					{
-						"buffer_size": 575,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								193,
-								193
-							]
-						],
-						"settings":
-						{
-							"auto_name": "'''",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],

@@ -54,6 +54,9 @@ for i in range( 2 * len( boxes )):
 
 	# Set it to black
 	box.setFill('black')
+	
+	# Wait for 50 millisecond
+	sleep(0.05)
 
 # Wait for a click to close
 win.getMouse()

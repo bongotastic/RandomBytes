@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"Pl",
+				"PlayTurn"
+			],
+			[
+				"Roll",
+				"RollAgain"
+			],
+			[
+				"Cash",
+				"CashIn"
+			],
+			[
+				"Ro",
+				"RollAgain"
+			],
+			[
+				"In",
+				"InitRound"
+			],
+			[
+				"player",
+				"players"
+			],
+			[
+				"pla",
+				"players"
+			],
+			[
+				"c",
+				"cursor"
+			],
+			[
+				"b",
+				"brains"
+			],
+			[
+				"out",
+				"outcome"
+			],
+			[
+				"n_",
+				"n_row"
+			],
+			[
+				"box",
+				"boxesize"
+			],
+			[
 				"la",
 				"label_score"
 			],
@@ -63,18 +111,68 @@
 	},
 	"buffers":
 	[
-<<<<<<< HEAD
-=======
 		{
 			"file": "ProgAsArt/CoordGame.py",
 			"settings":
 			{
-				"buffer_size": 1592,
+				"buffer_size": 1591,
 				"line_ending": "Unix",
 				"name": "'''"
 			}
+		},
+		{
+			"contents": "Differentiate between the axial skeleton (skull and vertebral column) and the appendicular skeleton (girdles and bones of the extremities).\n\nDescribe the major features of joints (articulation, type, capsule, synovium, ligaments, special features, movements, nerve and blood supply).\n\nIdentify the major surface anatomy landmarks of the lower limb by palpitation of the living body: anterior superior iliac spine, lateral and medial femoral epicondyles, patella, shaft of tibia, tibial tuberosity, head of fibula, medial and lateral malleoli.\n\ncollege of computer and information sciences, Fujian Agriculture and Forestry University, Fujian 350002 P.R. China",
+			"file": "/Users/bongo/Desktop/test.txt",
+			"file_size": 542,
+			"file_write_time": 1433349368000000,
+			"settings":
+			{
+				"buffer_size": 658,
+				"line_ending": "Unix",
+				"name": "Differentiate between the axial skeleton (skull an"
+			}
+		},
+		{
+			"file": "ZombieDice/ZDengine.py",
+			"settings":
+			{
+				"buffer_size": 3199,
+				"line_ending": "Unix",
+				"name": "''' Zombie Dice Game Engine"
+			}
+		},
+		{
+			"file": "ProgAsArt/Other Examples/randomboxes.py",
+			"settings":
+			{
+				"buffer_size": 679,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ProgAsArt/Other Examples/multiovals.py",
+			"settings":
+			{
+				"buffer_size": 565,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ProgAsArt/PaA1circles.py",
+			"settings":
+			{
+				"buffer_size": 587,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ProgAsArt/Other Examples/animatedtiles.py",
+			"settings":
+			{
+				"buffer_size": 1206,
+				"line_ending": "Unix"
+			}
 		}
->>>>>>> origin/master
 	],
 	"build_system": "",
 	"command_palette":
@@ -100,10 +198,6 @@
 	},
 	"file_history":
 	[
-		"/Users/bongotastic/Git/RandomBytes/ProgAsArt/bubblelace.py",
-		"/Users/bongotastic/Git/RandomBytes/ProgAsArt/onecircle.py",
-		"/Users/bongotastic/Desktop/scratch.txt",
-		"/Users/bongotastic/Dropbox/work/outputs/workshops/art 1/test3.py",
 		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430958406/bluenose/users/faculty/cblouin/public_html/labblouin/index.php",
 		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430958209/bluenose/users/faculty/cblouin/public_html/labblouin/programming_art.php",
 		"/Users/bongotastic/Library/Application Support/Sublime Text 2/Packages/User/sftp_servers/bluenose",
@@ -151,6 +245,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"cyan",
+			"_reconfig",
+			"color",
 			"ResearchGate<",
 			"print(",
 			"requ",
@@ -180,24 +277,23 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
-<<<<<<< HEAD
-=======
 				{
 					"buffer": 0,
 					"file": "ProgAsArt/CoordGame.py",
 					"settings":
 					{
-						"buffer_size": 1592,
+						"buffer_size": 1591,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								501,
-								501
+								486,
+								486
 							]
 						],
 						"settings":
@@ -210,12 +306,185 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 187.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/bongo/Desktop/test.txt",
+					"settings":
+					{
+						"buffer_size": 658,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								658,
+								544
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Differentiate between the axial skeleton (skull an",
+							"incomplete_sync": null,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "ZombieDice/ZDengine.py",
+					"settings":
+					{
+						"buffer_size": 3199,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3197,
+								3197
+							]
+						],
+						"settings":
+						{
+							"auto_name": "''' Zombie Dice Game Engine",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1777.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ProgAsArt/Other Examples/randomboxes.py",
+					"settings":
+					{
+						"buffer_size": 679,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								254,
+								368
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "ProgAsArt/Other Examples/multiovals.py",
+					"settings":
+					{
+						"buffer_size": 565,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								356,
+								356
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "ProgAsArt/PaA1circles.py",
+					"settings":
+					{
+						"buffer_size": 587,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "ProgAsArt/Other Examples/animatedtiles.py",
+					"settings":
+					{
+						"buffer_size": 1206,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1085,
+								1085
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"incomplete_sync": null,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				}
->>>>>>> origin/master
 			]
 		}
 	],

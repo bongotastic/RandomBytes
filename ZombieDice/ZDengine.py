@@ -4,6 +4,7 @@
 
 '''
 import random
+from copy import copy
 
 class ZDGame:
 
@@ -33,10 +34,59 @@ class ZDGame:
 		self.tallies.append([])
 
 	def PlayTurn(self):
+		# Info
+		print("Turn %d"%(1+len(self.tallies[0])))
+
+		# Iterate over each players
+		for pid in range(len(self.players)):
+			self.cursor = pid
+			
+			# Initialize round
+			self.InitRound()
+
+			# Get Player
+			player = self.players[pid]
+
+			# Initial Run
+			self.RollAgain()
+
+			# Ask for decision
+			decision = player.Play(pid, self.tallies, self.hand, self.cup, len(self.brains), len(self.shotguns))
+			
+			if decision == False or self.ShotgunCount() >= 3:
+				self.CashIn()
+				print('Player %d scored %d for a total of %d'%(pid,len(self.brains), sum(self.tallies[pid])))			
+				continue
+
+			# Iterate
+			while decision and len(self.shotguns) < 3:
+				if decision:
+					self.RollAgain()
+
+				# Ask for decision
+				decision = player.Play(pid, self.tallies, self.hand, self.cup, len(self.brains), len(self.shotguns))
+			
+			# Cash in
+			self.CashIn()
+			print('Player %d scored %d for a total of %d'%(pid,len(self.brains), sum(self.tallies[pid])))
+
+	def PlayGame(self):
+		# Check for victory
+		while self.Gameover() == False:
+			self.PlayTurn()
+		
+	def Tournament(self, n):
+		# Runs a tournament of n games
 		pass
 
-	''' Mechanics that are not need for the AI
+	''' Mechanics that are not needed for the AI
 	'''
+	def Gameover(self):
+		for T in self.tallies:
+			if sum(T) >= 13:
+				return True
+		return False
+	
 	def InitRound(self):
 		'''
 		   Refill the cup and flush the table
@@ -67,6 +117,9 @@ class ZDGame:
 		self.hand.extend(self.PullFromCup( 3 - len(self.hand)))
 
 	def AleaIactaEst(self):
+		# temporary hand
+		temphand = []
+		
 		# Roll and sort each dice in hand
 		for d in self.hand:
 			outcome = self.RollOnce(d)
@@ -76,9 +129,12 @@ class ZDGame:
 
 			elif outcome == 'S':
 				self.shotguns.append(d)
+			else:
+				temphand.append(d)
+		
+		self.hand = temphand
 
-		self.hand.remove('B')
-		self.hand.remove('S')
+
 
 	''' Possible Action to take
 	'''
@@ -89,7 +145,7 @@ class ZDGame:
 
 	def CashIn(self):
 		# Cash in brains and move on
-		if ShotgunCount() >= 3:
+		if len(self.shotguns) >= 3:
 			self.tallies[self.cursor].append(0)
 		else:
 			self.tallies[self.cursor].append( self.BrainCount() )
@@ -118,6 +174,8 @@ class ZDPlayer:
 		       False -> when the player decides to cash in the brains for the turn.
 		'''
 		# The base class player dumbly rolls only once, regardless of outcome.
+		if n_brain == 0:
+			return True
 		return False
 
 
@@ -131,5 +189,5 @@ def SetupTestGame(n):
 if __name__ == "__main__":
 
 	game = SetupTestGame(4)
-
+	game.PlayGame()
 

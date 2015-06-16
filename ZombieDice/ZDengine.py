@@ -27,6 +27,16 @@ class ZDGame:
 		self.brains = []
 		self.shotguns = []
 
+	'''Metagaming methods'''
+	def AddPlayer(self, player):
+		self.players.append(player)
+		self.tallies.append([])
+
+	def PlayTurn(self):
+		pass
+
+	''' Mechanics that are not need for the AI
+	'''
 	def InitRound(self):
 		'''
 		   Refill the cup and flush the table
@@ -36,12 +46,6 @@ class ZDGame:
 		self.brains = []
 		self.shotguns = []
 
-	def AddPlayer(self, player):
-		self.players.append(player)
-		self.tallies.append([])
-
-	''' Mechanics that are not need for the AI
-	'''
 	def RollOnce(self, color):
 		# Get dice
 		d = ZDGame.dice[color]
@@ -100,14 +104,32 @@ class ZDGame:
 		return len(self.shotguns)
 
 
+''' Base class for the AI player
+'''
+class ZDPlayer:
+	def __init__(self):
+		pass
+
+	def Play(self, player_id, tallies, hand, cup, n_brain, n_shotgun):
+		''' 
+		    Method used to request a decision from the player
+		    returns:
+		       True -> when the player decides to have another round.
+		       False -> when the player decides to cash in the brains for the turn.
+		'''
+		# The base class player dumbly rolls only once, regardless of outcome.
+		return False
+
+
+def SetupTestGame(n):
+	out = ZDGame()
+	for i in range(n):
+		out.AddPlayer( ZDPlayer() )
+	return out
 
 
 if __name__ == "__main__":
 
-	game = ZDGame()
-
-	game.InitRound()
-
-	print game.PullFromCup(3)
+	game = SetupTestGame(4)
 
 

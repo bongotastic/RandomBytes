@@ -1,39 +1,52 @@
-''' Zombie Dice Game Engine 
+''' 
+	Zombie Dice Game Engine 
 
 	cblouin@dal.ca
 
 '''
 import random
-from copy import copy
 
+'''
+    Class that models a single game. All of the game logic is incoded here. Contestant do not need to know any of the interface in this 
+    class.
+'''
 class ZDGame:
 
+	# Structure of dice in Zombie Dice
 	dice = {'G':list('BBBFFS'), 'Y':list('BBFFSS'),'R':list('BFFSSS')}
 
 	def __init__(self):
 		# player roster
 		self.players = []
+		
+		# Current player (needed to cashing in)
 		self.cursor = 0
 
 		# Tally
 		self.tallies = []
 
-		# Cup
+		# Cup - What dice can be drawn in the next round
 		self.cup = []
 
-		# hand
+		# hand - what was rolled as feet, or initially drawn
 		self.hand = []
 
-		# Table
+		# Table - Keep track of outcomes, regardless of color
 		self.brains = []
 		self.shotguns = []
 
 	'''Metagaming methods'''
 	def AddPlayer(self, player):
+		''' INPUT:
+		        player - an instance of a ZDPlayer child class
+		'''
 		self.players.append(player)
 		self.tallies.append([])
 
 	def PlayTurn(self):
+		''' 
+		    Iterate over all players and get them to complete their turn
+		'''
 		# Info
 		print("Turn %d"%(1+len(self.tallies[0])))
 
@@ -59,7 +72,7 @@ class ZDGame:
 				continue
 
 			# Iterate
-			while decision and len(self.shotguns) < 3:
+			while decision and len(self.shotguns) < 3 and len(self.hand) > 0:
 				if decision:
 					self.RollAgain()
 
@@ -71,17 +84,38 @@ class ZDGame:
 			print('Player %d scored %d for a total of %d'%(pid,len(self.brains), sum(self.tallies[pid])))
 
 	def PlayGame(self):
+		''' 
+		    Play turns until a player is victorious
+		'''
 		# Check for victory
 		while self.Gameover() == False:
 			self.PlayTurn()
 		
-	def Tournament(self, n):
-		# Runs a tournament of n games
-		pass
+	def GetWinner(self):
+		'''
+		    Obtain the instance of the victorious player. Used by the tournament class
+		'''
+		# Finds the winner
+		final_scores = []
+		
+		# Compute scores
+		for t in self.tallies:
+			final_scores.append(sum(t))
+			
+		# Get max scores
+		max_score = max(final_scores)
+		
+		# return the first to score max_score
+		for i in range(len(final_scores)):
+			if final_scores[i] == max_score:
+				return self.players[i]
 
 	''' Mechanics that are not needed for the AI
 	'''
 	def Gameover(self):
+		'''
+		    Returns True is a t least one player has a tally of 13 or more. Do not use unless a full turn is completed.
+		'''
 		for T in self.tallies:
 			if sum(T) >= 13:
 				return True
@@ -97,6 +131,13 @@ class ZDGame:
 		self.shotguns = []
 
 	def RollOnce(self, color):
+		'''
+		    Draws a dice outcome depending on the color of the dice.
+		    INPUT: 
+		        color (string) - Either R, G or Y (Red, Green or Yellow)
+		    OUTPUT:
+		        (string) - Either B, F, or S (Brain, Feet, Shotgun)
+		'''
 		# Get dice
 		d = ZDGame.dice[color]
 
@@ -104,6 +145,11 @@ class ZDGame:
 		return random.choice(d)
 
 	def PullFromCup(self, n):
+		'''
+		    Draws n dice from the cup.
+		    INPUT:
+		       n (int) - number of dice to draw
+		'''
 		# pulls n dice from cup
 		random.shuffle(self.cup)
 
@@ -113,10 +159,16 @@ class ZDGame:
 		return out
 
 	def FillHand(self):
+		'''
+		    Transfer pulled dice from cup into the hand.
+		'''
 		# Refill the hand by drawing from a cup
 		self.hand.extend(self.PullFromCup( 3 - len(self.hand)))
 
 	def AleaIactaEst(self):
+		'''
+		    Roll three dice and hope for the best. Record Brains and Shotguns and keep feets into the hand.
+		'''
 		# temporary hand
 		temphand = []
 		
@@ -163,8 +215,16 @@ class ZDGame:
 ''' Base class for the AI player
 '''
 class ZDPlayer:
+	name = 'Default'
 	def __init__(self):
-		pass
+		self.n_win = 0
+		self.rank = 100
+		
+	def Name(self):
+		return self.name
+	
+	def RecordWin(self):
+		self.n_win += 1
 
 	def Play(self, player_id, tallies, hand, cup, n_brain, n_shotgun):
 		''' 
@@ -174,8 +234,6 @@ class ZDPlayer:
 		       False -> when the player decides to cash in the brains for the turn.
 		'''
 		# The base class player dumbly rolls only once, regardless of outcome.
-		if n_brain == 0:
-			return True
 		return False
 
 

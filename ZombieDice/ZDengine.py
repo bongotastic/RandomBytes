@@ -48,7 +48,7 @@ class ZDGame:
 		    Iterate over all players and get them to complete their turn
 		'''
 		# Info
-		print("Turn %d"%(1+len(self.tallies[0])))
+		#print("Turn %d"%(1+len(self.tallies[0])))
 
 		# Iterate over each players
 		for pid in range(len(self.players)):
@@ -68,7 +68,7 @@ class ZDGame:
 			
 			if decision == False or self.ShotgunCount() >= 3:
 				self.CashIn()
-				print('Player %d scored %d for a total of %d'%(pid,len(self.brains), sum(self.tallies[pid])))			
+				#print('Player %d scored %d for a total of %d'%(pid,len(self.brains), sum(self.tallies[pid])))			
 				continue
 
 			# Iterate
@@ -81,7 +81,7 @@ class ZDGame:
 			
 			# Cash in
 			self.CashIn()
-			print('Player %d scored %d for a total of %d'%(pid,len(self.brains), sum(self.tallies[pid])))
+			#print('Player %d scored %d for a total of %d'%(pid,len(self.brains), sum(self.tallies[pid])))
 
 	def PlayGame(self):
 		''' 

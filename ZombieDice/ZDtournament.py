@@ -11,10 +11,15 @@ class ZDTournament:
         # Maximum number of round
         self.n_round = n_round
         
+        # Player vector
         self.players = []
         
+        # Number of player per game
+        self.n_player = 4
+        
+        # Ranking system
         self.pool = 0
-        self.stakes = 0.1
+        self.stakes = 0.2
         
     def RegisterPlayer(self, player_instance):
         # Add a player instance
@@ -25,6 +30,26 @@ class ZDTournament:
         
         # Take stakes and pool it
         player_instance.rank *= 0.9        
+        
+    def PrintOutcome(self):
+        # Output string
+        out = 'Player\tRank\n'
+        
+        # Gather ranks
+        ranks = {}
+        for i in self.players:
+            if not i.rank in ranks:
+                ranks[i.rank] = [i]
+            else:
+                ranks[i.rank].append(i)
+        
+        # Find largest rank
+        while (len(ranks)):
+            mx_rank = max(ranks)
+            for p in ranks[mx_rank]:
+                print (p.name, p.rank)
+            del ranks[mx_rank]
+        
         
     def Run(self):
         # Run n_round times
@@ -57,11 +82,10 @@ class ZDTournament:
 
 if __name__ == "__main__":
     # Create a tournament
-    tournament = ZDTournament(1000)
+    tournament = ZDTournament(10000)
     
     # Add players
     from ZDengine import ZDPlayer
-    tournament.RegisterPlayer(ZDPlayer())
     tournament.RegisterPlayer(ZDPlayer())
     
     from zd_upto2 import zd_upto2
@@ -70,5 +94,8 @@ if __name__ == "__main__":
     from zd_go1 import zd_go1
     tournament.RegisterPlayer(zd_go1())
     
+    from zd_go2 import zd_go2
+    tournament.RegisterPlayer(zd_go2())    
+    
     tournament.Run()
-    print tournament
+    tournament.PrintOutcome()

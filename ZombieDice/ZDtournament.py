@@ -6,6 +6,7 @@
 from ZDengine import ZDGame
 from random import shuffle
 
+
 class ZDTournament:
     def __init__(self, n_round):
         # Maximum number of round

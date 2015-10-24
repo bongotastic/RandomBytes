@@ -5,6 +5,8 @@
 
 from ZDengine import ZDGame
 from random import shuffle
+from os import listdir
+from importlib import import_module
 
 
 class ZDTournament:
@@ -30,7 +32,23 @@ class ZDTournament:
         self.pool += player_instance.rank * self.stakes
         
         # Take stakes and pool it
-        player_instance.rank *= 0.9        
+        player_instance.rank *= 0.9      
+
+    def LoadFolder(self, foldername):
+        # Set tournament name
+        self.name = foldername
+
+        # Import all files of the pattern zd_*
+        for fname in listdir(foldername):
+            if fname.startswith('zd_') and fname.endswith('.py'):
+                # Remove extension
+                x = import_module(fname[:-3])
+
+                # INstanciate a player
+                player = getattr(x, fname[:-3])()
+
+                # Add it to the tournament
+                self.RegisterPlayer(player)  
         
     def PrintOutcome(self):
         # Output string
@@ -86,17 +104,7 @@ if __name__ == "__main__":
     tournament = ZDTournament(10000)
     
     # Add players
-    from ZDengine import ZDPlayer
-    tournament.RegisterPlayer(ZDPlayer())
-    
-    from zd_upto2 import zd_upto2
-    tournament.RegisterPlayer(zd_upto2())
-    
-    from zd_go1 import zd_go1
-    tournament.RegisterPlayer(zd_go1())
-    
-    from zd_go2 import zd_go2
-    tournament.RegisterPlayer(zd_go2())    
+    tournament.LoadFolder('testtournament')   
     
     tournament.Run()
     tournament.PrintOutcome()

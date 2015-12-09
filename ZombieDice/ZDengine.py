@@ -215,7 +215,7 @@ class ZDGame:
 ''' Base class for the AI player
 '''
 class ZDPlayer:
-	name = 'Scaredy cat'
+	name = 'Base class'
 	def __init__(self):
 		# These attributes are off bound for manipulation
 		self.n_win = 0

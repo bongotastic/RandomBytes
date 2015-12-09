@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Re",
+				"RegisterPlayer"
+			],
+			[
 				"Pl",
 				"PlayTurn"
 			],
@@ -112,65 +116,48 @@
 	"buffers":
 	[
 		{
-			"file": "ProgAsArt/CoordGame.py",
-			"settings":
-			{
-				"buffer_size": 1591,
-				"line_ending": "Unix",
-				"name": "'''"
-			}
-		},
-		{
-			"contents": "Differentiate between the axial skeleton (skull and vertebral column) and the appendicular skeleton (girdles and bones of the extremities).\n\nDescribe the major features of joints (articulation, type, capsule, synovium, ligaments, special features, movements, nerve and blood supply).\n\nIdentify the major surface anatomy landmarks of the lower limb by palpitation of the living body: anterior superior iliac spine, lateral and medial femoral epicondyles, patella, shaft of tibia, tibial tuberosity, head of fibula, medial and lateral malleoli.\n\ncollege of computer and information sciences, Fujian Agriculture and Forestry University, Fujian 350002 P.R. China",
-			"file": "/Users/bongo/Desktop/test.txt",
-			"file_size": 542,
-			"file_write_time": 1433349368000000,
-			"settings":
-			{
-				"buffer_size": 658,
-				"line_ending": "Unix",
-				"name": "Differentiate between the axial skeleton (skull an"
-			}
-		},
-		{
 			"file": "ZombieDice/ZDengine.py",
 			"settings":
 			{
-				"buffer_size": 3199,
+				"buffer_size": 5491,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ZombieDice/ZDtournament.py",
+			"settings":
+			{
+				"buffer_size": 2883,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ZombieDice/zd_go1.py",
+			"settings":
+			{
+				"buffer_size": 387,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "*Interpret an energy diagram in the context of protein folding.\nExplain the connection between frequency of observation and the ΔG° of a conformational shift.\nExplain how the native conformation may not be the most stable conformation for a given protein chain.\n*Describe the experimental approach used to test whether specific binding requires different protein conformation.\n*Explain how protein models are formulated: energy terms, problem of parameterization.\nExplain the difference between a minimization and a molecular dynamics simulation.\nExplain why temperature and simulation length influences the results of a simulation.\n*Prepare figures illustrating how proteins interact.\n*Prepare a figure illustrating the molecular basis for specific binding between two proteins.\n*Describe the limitations of simulating protein folding. \n*Explain the intrinsic limitations of using high-performance computing to solve the problem of protein design.\nDescribe at a high level how proteins are aligned and compared.\nInterpret the protein structure classification scheme such as CATH and SCOP.\n*Describe how neutral and negative selection are contributing to the evolution of new function in proteins.\n",
+			"settings":
+			{
+				"buffer_size": 1198,
 				"line_ending": "Unix",
-				"name": "''' Zombie Dice Game Engine"
+				"name": "*Interpret an energy diagram in the context of pro"
 			}
 		},
 		{
-			"file": "ProgAsArt/Other Examples/randomboxes.py",
+			"contents": "Describe the relationship between the registers, the logical units, the bus and the RAM.\nDescribe how high-level computation is made of from a limited set of hard wired instructions.\nDescribe the empirical relationship between development of hardware and performance.\nExplain how instructions are encoded as bit strings called machine code.\nEmulate the execution of machine code by a simplified CPU.\nDescribe the purpose of controllers and how peripherals are handled by the CPU.\nDescribe pipelining and how multiprocessor architecture functions (in general).\nDifferentiate terms such as kernel, user interface, terminal, utility, applications.\nDescribe at a high level how the OS distribute the CPU's resource between a number of applications by using interupts, interupt handlers, schedulers and dispatchers.\nProperly use network terminology when discussing the topic.\nDistinguish between Client-Server and peer-to-peer models\nDescribe the infrastructure that forms the \"backbone\" of the Internet\nDescribe how a resource can be accessed through the Internet using the correct terminology: urls, IP addresses, domain names.\nExplain the main components of the HTTP protocol.\nDescribe how documents can be structured using the hypertext format.\nDescribe the transmission of a message between two applications through the Internet.\nDistinguish between TCP and UDP as transport layer protocols.",
+			"file": "/Users/bongo/Desktop/allegation.txt",
+			"file_size": 346,
+			"file_write_time": 1445987939000000,
 			"settings":
 			{
-				"buffer_size": 679,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ProgAsArt/Other Examples/multiovals.py",
-			"settings":
-			{
-				"buffer_size": 565,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ProgAsArt/PaA1circles.py",
-			"settings":
-			{
-				"buffer_size": 587,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ProgAsArt/Other Examples/animatedtiles.py",
-			"settings":
-			{
-				"buffer_size": 1206,
-				"line_ending": "Unix"
+				"buffer_size": 1391,
+				"line_ending": "Unix",
+				"name": "The particular files in which I first noticed the"
 			}
 		}
 	],
@@ -198,6 +185,13 @@
 	},
 	"file_history":
 	[
+		"/Users/bongo/git/RandomBytes/ProgAsArt/PaA1circles.py",
+		"/Users/bongo/git/RandomBytes/ProgAsArt/Other Examples/multiovals.py",
+		"/Users/bongo/git/RandomBytes/ProgAsArt/Other Examples/randomboxes.py",
+		"/Users/bongo/Desktop/test.txt",
+		"/Users/bongo/git/RandomBytes/ProgAsArt/CoordGame.py",
+		"/Users/bongo/git/RandomBytes/ProgAsArt/Other Examples/animatedtiles.py",
+		"/Users/bongo/git/RandomBytes/ZombieDice/ZDengine.py",
 		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430958406/bluenose/users/faculty/cblouin/public_html/labblouin/index.php",
 		"/var/folders/24/5pq7ntk91j32psbxx1q2pyp80000gn/T/sublime-sftp-browse-1430958209/bluenose/users/faculty/cblouin/public_html/labblouin/programming_art.php",
 		"/Users/bongotastic/Library/Application Support/Sublime Text 2/Packages/User/sftp_servers/bluenose",
@@ -277,163 +271,15 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "ProgAsArt/CoordGame.py",
-					"settings":
-					{
-						"buffer_size": 1591,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								486,
-								486
-							]
-						],
-						"settings":
-						{
-							"auto_name": "'''",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/bongo/Desktop/test.txt",
-					"settings":
-					{
-						"buffer_size": 658,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								658,
-								544
-							]
-						],
-						"settings":
-						{
-							"auto_name": "Differentiate between the axial skeleton (skull an",
-							"incomplete_sync": null,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "ZombieDice/ZDengine.py",
 					"settings":
 					{
-						"buffer_size": 3199,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3197,
-								3197
-							]
-						],
-						"settings":
-						{
-							"auto_name": "''' Zombie Dice Game Engine",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1777.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "ProgAsArt/Other Examples/randomboxes.py",
-					"settings":
-					{
-						"buffer_size": 679,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								254,
-								368
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "ProgAsArt/Other Examples/multiovals.py",
-					"settings":
-					{
-						"buffer_size": 565,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								356,
-								356
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "ProgAsArt/PaA1circles.py",
-					"settings":
-					{
-						"buffer_size": 587,
+						"buffer_size": 5491,
 						"regions":
 						{
 						},
@@ -449,7 +295,70 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2936.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "ZombieDice/ZDtournament.py",
+					"settings":
+					{
+						"buffer_size": 2883,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 134.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "ZombieDice/zd_go1.py",
+					"settings":
+					{
+						"buffer_size": 387,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -458,26 +367,57 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "ProgAsArt/Other Examples/animatedtiles.py",
+					"buffer": 3,
 					"settings":
 					{
-						"buffer_size": 1206,
+						"buffer_size": 1198,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1085,
-								1085
+								263,
+								376
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
+							"auto_name": "*Interpret an energy diagram in the context of pro",
 							"incomplete_sync": null,
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/bongo/Desktop/allegation.txt",
+					"settings":
+					{
+						"buffer_size": 1391,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1391
+							]
+						],
+						"settings":
+						{
+							"auto_name": "The particular files in which I first noticed the",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

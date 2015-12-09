@@ -47,11 +47,10 @@ class ZDGame:
 		''' 
 		    Iterate over all players and get them to complete their turn
 		'''
-		# Info
-		#print("Turn %d"%(1+len(self.tallies[0])))
 
 		# Iterate over each players
 		for pid in range(len(self.players)):
+			# set current player
 			self.cursor = pid
 			
 			# Initialize round
@@ -114,7 +113,7 @@ class ZDGame:
 	'''
 	def Gameover(self):
 		'''
-		    Returns True is a t least one player has a tally of 13 or more. Do not use unless a full turn is completed.
+		    Returns True if at least one player has a tally of 13 or more. Do not use unless a full turn is completed.
 		'''
 		for T in self.tallies:
 			if sum(T) >= 13:
@@ -123,16 +122,17 @@ class ZDGame:
 	
 	def InitRound(self):
 		'''
-		   Refill the cup and flush the table
+		   Refill the cup and clear the table
 		'''
 		self.cup = list('GGGGGGYYYYRRR')
 
 		self.brains = []
 		self.shotguns = []
+		
 
 	def RollOnce(self, color):
 		'''
-		    Draws a dice outcome depending on the color of the dice.
+		    Draws a die outcome depending on the color of the dice.
 		    INPUT: 
 		        color (string) - Either R, G or Y (Red, Green or Yellow)
 		    OUTPUT:
@@ -215,8 +215,9 @@ class ZDGame:
 ''' Base class for the AI player
 '''
 class ZDPlayer:
-	name = 'Default'
+	name = 'Scaredy cat'
 	def __init__(self):
+		# These attributes are off bound for manipulation
 		self.n_win = 0
 		self.rank = 100
 		

@@ -3,7 +3,7 @@
    cblouin@dal.ca
 '''
 
-from ZDengine import ZDGame
+from ZDengine import ZDGame, ZDPlayer
 from random import shuffle
 from os import listdir
 from importlib import import_module
@@ -104,7 +104,10 @@ if __name__ == "__main__":
     tournament = ZDTournament(10000)
     
     # Add players
-    tournament.LoadFolder('testtournament')   
+    tournament.LoadFolder('.')   
+    
+    # Add baseline
+    tournament.RegisterPlayer(ZDPlayer())
     
     tournament.Run()
     tournament.PrintOutcome()

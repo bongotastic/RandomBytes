@@ -5,7 +5,7 @@
 from ZDengine import ZDPlayer
 
 class zd_upto2(ZDPlayer):
-    name = 'zd_upto2'
+    name = 'zd Playing Chicken 2'
     
     def __init__(self):
         ZDPlayer.__init__(self)

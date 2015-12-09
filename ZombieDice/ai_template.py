@@ -4,6 +4,13 @@
 '''
 from ZDengine import ZDPlayer
 
+
+'''
+    Access and manipulation of n_win and rank is strictly forbidden. You may create as many methods 
+    as needed. However, the only method that will be called by the tournament is Play().
+    
+    Name both your file with the pattern: yourname_ainame.py (file name), yourname_ainame (Class name)
+'''
 class ai_template(ZDPlayer):
     name = 'template_name'
     
@@ -22,7 +29,7 @@ class ai_template(ZDPlayer):
                n_shotgun - (int) Current number of shotgun on the table.
             OUTPUT:
                True - (bool) Proceed with another round of dice rolling
-               False - (bool) Cash in the brains and stop the turn
+               False - (bool) Cash in the brains and end the turn
                
             STRATEGY:
                ...

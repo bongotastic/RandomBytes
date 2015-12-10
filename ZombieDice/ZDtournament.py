@@ -14,6 +14,9 @@ class ZDTournament:
         # Maximum number of round
         self.n_round = n_round
         
+        # Ideal number of players
+        self.n_player = 4
+        
         # Player vector
         self.players = []
         
@@ -69,38 +72,81 @@ class ZDTournament:
                 print (p.name, p.rank)
             del ranks[mx_rank]
         
+    def Leaderboard(self):
+        ''' Create a leaderboard.
+        '''
+        # Open file
+        fout = open('leaderboard.html','w')
         
+        # Header bit
+        fout.write('<html>\n<body>\n')
+        
+        # Table body       
+        
+        # Open table
+        fout.write('<table><tr><td>Rank</td><td>Name</td><td>Credit</td><td>Wins</td><td>Time/win(ms)</td></tr>')
+        
+        # Gather ranks
+        ranks = {}
+        for i in self.players:
+            if not i.rank in ranks:
+                ranks[i.rank] = [i]
+            else:
+                ranks[i.rank].append(i)
+    
+        # Find largest rank
+        ranking = 1
+        while (len(ranks)):
+            mx_rank = max(ranks)
+            for p in ranks[mx_rank]:
+                fout.write('<tr><td>%d</td><td>%s</td><td>%f</td><td>%d</td><td>%.3f</td></tr>\n'%(ranking, p.name, p.rank, p.n_win, 1000*p.clock/p.n_win))
+            del ranks[mx_rank]   
+            ranking += 1
+        
+        # End table
+        fout.write('</table>')
+        
+        # Close file
+        fout.write('</body>\n</html>\n')
+        fout.close()
+            
     def Run(self):
-        # Run n_round times
-        for i in range(self.n_round):
+        ''' Run tournament of n_rounds and n_players
+        '''
+        # determine number of game to average n_rounds of n_players for all players
+        n_rounds = max((self.n_round * len(self.players)) / self.n_player, self.n_round)
+        
+            
+        for i in range(n_rounds):
+            # Pick players for next game
+            shuffle(self.players)
+            players = self.players[:self.n_player]  
+            
+            # Set pool of credits
+            credits = 0.0
+            for p in players:
+                p.n_game += 1
+                x = p.rank * 0.1
+                p.rank -= x
+                credits += x            
+            
             # Create a game
             game = ZDGame()
             
             # Add players
-            for p in self.players:
+            for p in players:
                 game.AddPlayer(p)
                 
             # Run Game
             game.PlayGame()
             
             # Register winner
-            winner = game.GetWinner()
-            winner.RecordWin()
+            winner = game.GetWinner()       
             
-            # shuffle player orders
-            shuffle(self.players)
+            # Grant awards
+            winner.rank += credits
+            winner.n_win += 1
             
-        # Update ranks
-        for player in self.players:
-            # Prop win
-            p_win = player.n_win / float(self.n_round)
-            
-            # rank update
-            player.rank += p_win * self.pool
-            
-    def RunOneGame(self, playas):
-        # Play one game with the set of playas
-        pass
 
 if __name__ == "__main__":
     # Create a tournament
@@ -114,3 +160,4 @@ if __name__ == "__main__":
     
     tournament.Run()
     tournament.PrintOutcome()
+    tournament.Leaderboard()

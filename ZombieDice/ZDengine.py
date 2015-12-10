@@ -5,6 +5,7 @@
 
 '''
 import random
+from time import time
 
 '''
     Class that models a single game. All of the game logic is incoded here. Contestant do not need to know any of the interface in this 
@@ -75,8 +76,11 @@ class ZDGame:
 				if decision:
 					self.RollAgain()
 
-				# Ask for decision
+				# Ask for decision #########
+				# Before time
+				beforetime = time()
 				decision = player.Play(pid, self.tallies, self.hand, self.cup, len(self.brains), len(self.shotguns))
+				player.clock += time() - beforetime
 			
 			# Cash in
 			self.CashIn()
@@ -218,8 +222,10 @@ class ZDPlayer:
 	name = 'Base class'
 	def __init__(self):
 		# These attributes are off bound for manipulation
+		self.n_game = 0
 		self.n_win = 0
 		self.rank = 100
+		self.clock = 0
 		
 	def Name(self):
 		return self.name

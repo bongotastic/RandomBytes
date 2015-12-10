@@ -10,7 +10,7 @@ from ZDengine import ZDPlayer
     Access and manipulation of n_win and rank is strictly forbidden. You may create as many methods 
     as needed. However, the only method that will be called by the tournament is Play().
     
-    Name both your file with the pattern: zd_yourname_ainame.py (file name), yourname_ainame (Class name)
+    Name both your file with the pattern: zd_yourname_ainame.py (file name), zd_yourname_ainame (Class name)
 '''
 class ai_template(ZDPlayer):
     name = 'template_name'

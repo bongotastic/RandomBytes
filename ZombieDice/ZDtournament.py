@@ -98,6 +98,9 @@ class ZDTournament:
             # rank update
             player.rank += p_win * self.pool
             
+    def RunOneGame(self, playas):
+        # Play one game with the set of playas
+        pass
 
 if __name__ == "__main__":
     # Create a tournament

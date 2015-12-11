@@ -15,7 +15,7 @@ class ZDTournament:
         self.n_round = n_round
         
         # Ideal number of players
-        self.n_player = 4
+        self.n_player = 8
         
         # Player vector
         self.players = []
@@ -110,14 +110,14 @@ class ZDTournament:
         fout.write('</body>\n</html>\n')
         fout.close()
             
-    def Run(self):
+    def RunX(self):
         ''' Run tournament of n_rounds and n_players
         '''
         # determine number of game to average n_rounds of n_players for all players
         n_rounds = max((self.n_round * len(self.players)) / self.n_player, self.n_round)
         
             
-        for i in range(n_rounds):
+        for i in xrange(n_rounds):
             # Pick players for next game
             shuffle(self.players)
             players = self.players[:self.n_player]  
@@ -147,10 +147,37 @@ class ZDTournament:
             winner.rank += credits
             winner.n_win += 1
             
+    def Run(self):
+        # Run n_round times
+        for i in range(self.n_round):
+            # Create a game
+            game = ZDGame()
+            
+            # Add players
+            for p in self.players:
+                game.AddPlayer(p)
+                
+            # Run Game
+            game.PlayGame()
+            
+            # Register winner
+            winner = game.GetWinner()
+            winner.RecordWin()
+            
+            # shuffle player orders
+            shuffle(self.players)
+            
+        # Update ranks
+        for player in self.players:
+            # Prop win
+            p_win = player.n_win / float(self.n_round)
+            
+            # rank update
+            player.rank += p_win * self.pool    
 
 if __name__ == "__main__":
     # Create a tournament
-    tournament = ZDTournament(10000)
+    tournament = ZDTournament(5000)
     
     # Add players
     tournament.LoadFolder('.')   

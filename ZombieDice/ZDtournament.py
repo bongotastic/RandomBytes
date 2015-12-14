@@ -77,7 +77,7 @@ class ZDTournament:
         fout = open('leaderboard_%d_%d.html'%(self.n_player, self.n_round),'w')
         
         # Header bit
-        fout.write('<html>\n<body>\n')
+        fout.write('<html>\n<title>Zombie Dice Leaderboard</title><body>\n')
         
         # Table body       
         
@@ -189,7 +189,7 @@ class ZDTournament:
                 # Update ranks
                 ai.rank += freq_win * self.pool
                 
-            # write partial results
+            # write partial results for impatient people
             if i % 200 == 0:
                 self.Leaderboard()
                 

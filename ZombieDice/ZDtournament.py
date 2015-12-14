@@ -189,6 +189,10 @@ class ZDTournament:
                 # Update ranks
                 ai.rank += freq_win * self.pool
                 
+            # write partial results
+            if i % 200 == 0:
+                self.Leaderboard()
+                
         
 
 if __name__ == "__main__":

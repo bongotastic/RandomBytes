@@ -15,27 +15,24 @@ class ZDTournament:
         self.n_round = n_round
         
         # Ideal number of players
-        self.n_player = 8
+        self.n_player = 4
         
         # Player vector
         self.players = []
         
-        # Number of player per game
-        self.n_player = 4
-        
         # Ranking system
         self.pool = 0
-        self.stakes = 0.2
+        self.stakes = 20.0
+        self.pool_init = 200.0
+        self.table_round = 100
         
     def RegisterPlayer(self, player_instance):
         # Add a player instance
         self.players.append(player_instance)
         
-        # Put a bet down
-        self.pool += player_instance.rank * self.stakes
-        
-        # Take stakes and pool it
-        player_instance.rank *= 0.9      
+        # Seed ranking system
+        player_instance.rank = self.pool_init
+            
 
     def LoadFolder(self, foldername):
         # Set tournament name
@@ -47,11 +44,12 @@ class ZDTournament:
                 # Remove extension
                 x = import_module(fname[:-3])
 
-                # INstanciate a player
-                player = getattr(x, fname[:-3])()
-
-                # Add it to the tournament
-                self.RegisterPlayer(player)  
+                for i in range(2):
+                    # INstanciate a player
+                    player = getattr(x, fname[:-3])()
+    
+                    # Add it to the tournament
+                    self.RegisterPlayer(player)  
         
     def PrintOutcome(self):
         # Output string
@@ -76,7 +74,7 @@ class ZDTournament:
         ''' Create a leaderboard.
         '''
         # Open file
-        fout = open('leaderboard.html','w')
+        fout = open('leaderboard_%d_%d.html'%(self.n_player, self.n_round),'w')
         
         # Header bit
         fout.write('<html>\n<body>\n')
@@ -99,7 +97,11 @@ class ZDTournament:
         while (len(ranks)):
             mx_rank = max(ranks)
             for p in ranks[mx_rank]:
-                fout.write('<tr><td>%d</td><td>%s</td><td>%f</td><td>%d</td><td>%.3f</td></tr>\n'%(ranking, p.name, p.rank, p.n_win, 1000*p.clock/p.n_win))
+                effwin = -1
+                if p.n_win != 0:
+                    effwin = 1000*p.clock/p.n_win
+                    
+                fout.write('<tr><td>%d</td><td>%s</td><td>%f</td><td>%d</td><td>%.3f</td></tr>\n'%(ranking, p.name, p.rank, p.n_win, effwin))
             del ranks[mx_rank]   
             ranking += 1
         
@@ -110,11 +112,39 @@ class ZDTournament:
         fout.write('</body>\n</html>\n')
         fout.close()
             
-    def RunX(self):
+    def BuildPool(self, players):
+        ''' Determine the expected earnings for each players
+        '''
+        # Reset
+        self.pool = 0.0
+        
+        # Calculate priors
+        pool = 0.0
+        for i in players:
+            pool += i.rank
+            
+        # Determine expected victory frequency
+        for i in players:
+            i.expected = i.rank/pool
+            
+            # Withdraw from AI
+            i.rank -= i.expected * self.stakes
+            
+            # Add to pool
+            self.pool += i.expected * self.stakes
+            
+            
+        
+        
+    def Run(self):
         ''' Run tournament of n_rounds and n_players
         '''
         # determine number of game to average n_rounds of n_players for all players
-        n_rounds = max((self.n_round * len(self.players)) / self.n_player, self.n_round)
+        if self.n_player >= len(self.players):
+            n_rounds = self.n_round
+        else:
+            n_rounds = int(self.n_round * (float(len(self.players))/self.n_player))
+            
         
             
         for i in xrange(n_rounds):
@@ -123,61 +153,48 @@ class ZDTournament:
             players = self.players[:self.n_player]  
             
             # Set pool of credits
-            credits = 0.0
+            self.BuildPool(players)   
+            
+            # Local wins
+            local_wins = {}
             for p in players:
-                p.n_game += 1
-                x = p.rank * 0.1
-                p.rank -= x
-                credits += x            
+                local_wins[p] = 0
             
-            # Create a game
-            game = ZDGame()
             
-            # Add players
-            for p in players:
-                game.AddPlayer(p)
+            for j in xrange(self.table_round):
+                # Create a game
+                game = ZDGame()
                 
-            # Run Game
-            game.PlayGame()
-            
-            # Register winner
-            winner = game.GetWinner()       
-            
-            # Grant awards
-            winner.rank += credits
-            winner.n_win += 1
-            
-    def Run(self):
-        # Run n_round times
-        for i in range(self.n_round):
-            # Create a game
-            game = ZDGame()
-            
-            # Add players
-            for p in self.players:
-                game.AddPlayer(p)
+                # Add players
+                for p in players:
+                    game.AddPlayer(p)
+                    
+                # Run Game
+                game.PlayGame()
                 
-            # Run Game
-            game.PlayGame()
+                # Register winner
+                winner = game.GetWinner()       
+                
+                # Grant awards
+                winner.n_win += 1
+                
+                # record win locally
+                local_wins[winner] += 1
             
-            # Register winner
-            winner = game.GetWinner()
-            winner.RecordWin()
-            
-            # shuffle player orders
-            shuffle(self.players)
-            
-        # Update ranks
-        for player in self.players:
-            # Prop win
-            p_win = player.n_win / float(self.n_round)
-            
-            # rank update
-            player.rank += p_win * self.pool    
+            # Update the ranks
+            for ai in players:
+                # Actual frequency of winnings
+                freq_win = float(local_wins[ai]) / self.table_round
+                
+                # Update ranks
+                ai.rank += freq_win * self.pool
+                
+        
 
 if __name__ == "__main__":
-    # Create a tournament
+    # Create a tournament -- 1 vs 1
     tournament = ZDTournament(5000)
+    tournament.n_player = 2
     
     # Add players
     tournament.LoadFolder('.')   
@@ -188,3 +205,17 @@ if __name__ == "__main__":
     tournament.Run()
     tournament.PrintOutcome()
     tournament.Leaderboard()
+    
+    # Create a tournament 4 players table
+    tournament = ZDTournament(5000)
+    tournament.n_player = 4
+    
+    # Add players
+    tournament.LoadFolder('.')   
+    
+    # Add baseline
+    tournament.RegisterPlayer(ZDPlayer())
+    
+    tournament.Run()
+    tournament.PrintOutcome()
+    tournament.Leaderboard()    

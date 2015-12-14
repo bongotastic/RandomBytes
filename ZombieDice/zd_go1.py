@@ -5,7 +5,7 @@
 from ZDengine import ZDPlayer
 
 class zd_go1(ZDPlayer):
-    name = 'zd_go1'
+    name = 'zd_3Brains'
     
     def __init__(self):
         ZDPlayer.__init__(self)

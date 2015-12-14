@@ -35,6 +35,9 @@ class ZDGame:
 		# Table - Keep track of outcomes, regardless of color
 		self.brains = []
 		self.shotguns = []
+		
+		# Set pool
+		self.pool = 0
 
 	'''Metagaming methods'''
 	def AddPlayer(self, player):
@@ -43,6 +46,7 @@ class ZDGame:
 		'''
 		self.players.append(player)
 		self.tallies.append([])
+		
 
 	def PlayTurn(self):
 		''' 
@@ -111,6 +115,8 @@ class ZDGame:
 		# return the first to score max_score
 		for i in range(len(final_scores)):
 			if final_scores[i] == max_score:
+				# update rank
+				self.players[i].rank += self.pool
 				return self.players[i]
 
 	''' Mechanics that are not needed for the AI

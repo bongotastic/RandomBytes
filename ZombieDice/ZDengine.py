@@ -46,6 +46,7 @@ class ZDGame:
 		'''
 		self.players.append(player)
 		self.tallies.append([])
+		player.n_game += 1
 		
 
 	def PlayTurn(self):
@@ -242,6 +243,7 @@ class ZDGame:
 '''
 class ZDPlayer:
 	name = 'Base class'
+	division = 3
 	def __init__(self):
 		# These attributes are off bound for manipulations
 		self.n_game = 0

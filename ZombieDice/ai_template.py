@@ -14,6 +14,11 @@ from ZDengine import ZDPlayer
 '''
 class ai_template(ZDPlayer):
     name = 'template_name'
+    # Specify a division (Use the most specific)
+    # Division 1 : less than 20 unergraduate courses in computer science/informatics
+    # DIvision 2 : All undergraduate students
+    # Division 3 : General category (Graduates, Graduate students, etc.) 
+    division = 1
     
     def __init__(self):
         ZDPlayer.__init__(self)

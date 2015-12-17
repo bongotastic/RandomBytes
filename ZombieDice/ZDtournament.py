@@ -24,7 +24,7 @@ class ZDTournament:
         self.pool = 0
         self.stakes = 20.0
         self.pool_init = 200.0
-        self.table_round = 100
+        self.table_round = 20
         
     def RegisterPlayer(self, player_instance):
         # Add a player instance

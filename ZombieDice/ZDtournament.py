@@ -19,6 +19,7 @@ class ZDTournament:
         
         # Player vector
         self.players = []
+        self.disqualified = []
         
         # Ranking system
         self.pool = 0
@@ -171,6 +172,12 @@ class ZDTournament:
                     
                 # Run Game
                 game.PlayGame()
+                
+                # Clean up disqualified AI
+                for ai in game.GetDisqualified():
+                    self.players.remove(ai)
+                    players.remove(ai)
+                    self.disqualified.append(ai)
                 
                 # Register winner
                 winner = game.GetWinner()       

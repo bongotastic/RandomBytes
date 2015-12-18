@@ -168,7 +168,7 @@ class ZDTournament:
             
         
             
-        for i in xrange(n_rounds):
+        for i in range(n_rounds):
             # Pick players for next game
             shuffle(self.players)
             players = self.players[:self.n_player]  
@@ -182,7 +182,7 @@ class ZDTournament:
                 local_wins[p] = 0
             
             
-            for j in xrange(self.table_round):
+            for j in range(self.table_round):
                 # Create a game
                 game = ZDGame()
                 

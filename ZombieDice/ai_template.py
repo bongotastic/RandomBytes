@@ -13,12 +13,19 @@ from ZDengine import ZDPlayer
     Name both your file with the pattern: zd_yourname_ainame.py (file name), zd_yourname_ainame (Class name)
 '''
 class ai_template(ZDPlayer):
+    # must begin with zd_
     name = 'template_name'
     # Specify a division (Use the most specific)
     # Division 1 : less than 20 unergraduate courses in computer science/informatics
     # DIvision 2 : All undergraduate students
     # Division 3 : General category (Graduates, Graduate students, etc.) 
     division = 1
+    
+    ## Division to be entered in (select the most specific)
+    #  Division 1: less than 20 completed courses in CSCI/INFX
+    #  Division 2: All Undergraduate students (Includes Div 1)
+    #  Division 3: All human beings (include Div 2, Graduates, graduate students, faculty and staff)
+    division = 3
     
     def __init__(self):
         ZDPlayer.__init__(self)

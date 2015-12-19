@@ -19,6 +19,7 @@ class ZDTournament:
         
         # Player vector
         self.players = []
+        self.disqualified = []
         
         # Ranking system
         self.pool = 0
@@ -111,6 +112,24 @@ class ZDTournament:
         # Close file
         fout.write('</body>\n</html>\n')
         fout.close()
+        
+    def LeaderboardCSV(self):
+        ''' output to a csv file
+        '''
+        # Open file
+        fout = open('leaderboard_%d_%d.csv'%(self.n_player, self.n_round),'w')
+        fout.write('Name, rank, wins, games, efficiency, division\n')
+        
+        for p in self.players:
+            # Efficiency
+            efficiency = "--"
+            if p.n_win:
+                efficiency = str(1000*p.clock/p.n_win)
+            
+            fout.write('%s, %f, %d, %d, %s, %d\n'%(p.name, p.rank, p.n_win, p.n_game, efficiency, p.division))
+        
+        # Close file
+        fout.close()
             
     def BuildPool(self, players):
         ''' Determine the expected earnings for each players
@@ -145,9 +164,11 @@ class ZDTournament:
         else:
             n_rounds = int(self.n_round * (float(len(self.players))/self.n_player))
             
+        print('Will need to run %d mini-tournament of %d games [Total of: %d games]'%(n_rounds, self.table_round, n_rounds*self.table_round))
+            
         
             
-        for i in xrange(n_rounds):
+        for i in range(n_rounds):
             # Pick players for next game
             shuffle(self.players)
             players = self.players[:self.n_player]  
@@ -161,7 +182,7 @@ class ZDTournament:
                 local_wins[p] = 0
             
             
-            for j in xrange(self.table_round):
+            for j in range(self.table_round):
                 # Create a game
                 game = ZDGame()
                 
@@ -171,6 +192,12 @@ class ZDTournament:
                     
                 # Run Game
                 game.PlayGame()
+                
+                # Clean up disqualified AI
+                for ai in game.GetDisqualified():
+                    self.players.remove(ai)
+                    players.remove(ai)
+                    self.disqualified.append(ai)
                 
                 # Register winner
                 winner = game.GetWinner()       
@@ -191,14 +218,16 @@ class ZDTournament:
                 
             # write partial results for impatient people
             if i % 200 == 0:
+                self.LeaderboardCSV()
                 self.Leaderboard()
+                print("Concluded game %d of %d ."%(i, n_rounds))
                 
         
 
 if __name__ == "__main__":
-    # Create a tournament -- 1 vs 1
+    # Create a tournament with 4 players per table
     tournament = ZDTournament(5000)
-    tournament.n_player = 2
+    tournament.n_player = 4
     
     # Add players
     tournament.LoadFolder('.')   
@@ -210,9 +239,9 @@ if __name__ == "__main__":
     tournament.PrintOutcome()
     tournament.Leaderboard()
     
-    # Create a tournament 4 players table
+    # Create a tournament -- 1 vs 1
     tournament = ZDTournament(5000)
-    tournament.n_player = 4
+    tournament.n_player = 2
     
     # Add players
     tournament.LoadFolder('.')   

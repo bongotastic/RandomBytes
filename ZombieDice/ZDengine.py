@@ -46,6 +46,7 @@ class ZDGame:
 		'''
 		self.players.append(player)
 		self.tallies.append([])
+		player.n_game += 1
 		
 
 	def PlayTurn(self):
@@ -63,12 +64,19 @@ class ZDGame:
 
 			# Get Player
 			player = self.players[pid]
+			if player.disqualified:
+				continue
 
 			# Initial Run
 			self.RollAgain()
 
 			# Ask for decision
-			decision = player.Play(pid, self.tallies, self.hand, self.cup, len(self.brains), len(self.shotguns))
+			try:
+				decision = player.Play(pid, self.tallies, self.hand, self.cup, len(self.brains), len(self.shotguns))
+			except:
+				# This player must be disqualified
+				player.disqualified = True
+				continue
 			
 			if decision == False or self.ShotgunCount() >= 3:
 				self.CashIn()
@@ -118,6 +126,15 @@ class ZDGame:
 				# update rank
 				self.players[i].rank += self.pool
 				return self.players[i]
+			
+	def GetDisqualified(self):
+		'''Returns a list of disqualified players
+		'''
+		out = []
+		for i in self.players:
+			if i.disqualified:
+				out.append(i)
+		return out
 
 	''' Mechanics that are not needed for the AI
 	'''
@@ -226,12 +243,14 @@ class ZDGame:
 '''
 class ZDPlayer:
 	name = 'Base class'
+	division = 3
 	def __init__(self):
-		# These attributes are off bound for manipulation
+		# These attributes are off bound for manipulations
 		self.n_game = 0
 		self.n_win = 0
 		self.rank = 100
 		self.clock = 0
+		self.disqualified = False
 		
 	def Name(self):
 		return self.name

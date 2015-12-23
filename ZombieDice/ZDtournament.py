@@ -23,9 +23,9 @@ class ZDTournament:
         
         # Ranking system
         self.pool = 0
-        self.stakes = 20.0
+        self.stakes = 1.0
         self.pool_init = 200.0
-        self.table_round = 20
+        self.table_round = 100
         
     def RegisterPlayer(self, player_instance):
         # Add a player instance
@@ -158,69 +158,67 @@ class ZDTournament:
     def Run(self):
         ''' Run tournament of n_rounds and n_players
         '''
-        # determine number of game to average n_rounds of n_players for all players
-        if self.n_player >= len(self.players):
-            n_rounds = self.n_round
-        else:
-            n_rounds = int(self.n_round * (float(len(self.players))/self.n_player))
-            
-        print('Will need to run %d mini-tournament of %d games [Total of: %d games]'%(n_rounds, self.table_round, n_rounds*self.table_round))
-            
         
-            
-        for i in range(n_rounds):
+        for i in range(self.n_round):
             # Pick players for next game
             shuffle(self.players)
-            players = self.players[:self.n_player]  
             
-            # Set pool of credits
-            self.BuildPool(players)   
-            
-            # Local wins
-            local_wins = {}
-            for p in players:
-                local_wins[p] = 0
-            
-            
-            for j in range(self.table_round):
-                # Create a game
-                game = ZDGame()
+            # Split the tournament into tables (this could be parallelized)
+            for table in range(0,len(self.players), self.n_player):
+                if len(self.players) - table < self.n_player:
+                    continue
                 
-                # Add players
+                # Setup players
+                players = self.players[table:table+self.n_player]  
+                
+                # Set pool of credits
+                self.BuildPool(players)   
+                
+                # Local wins
+                local_wins = {}
                 for p in players:
-                    game.AddPlayer(p)
+                    local_wins[p] = 0
+                
+                
+                for j in range(self.table_round):
+                    # Create a game
+                    game = ZDGame()
                     
-                # Run Game
-                game.PlayGame()
+                    # Add players
+                    for p in players:
+                        game.AddPlayer(p)
+                        
+                    # Run Game
+                    game.PlayGame()
+                    
+                    # Clean up disqualified AI
+                    for ai in game.GetDisqualified():
+                        self.players.remove(ai)
+                        players.remove(ai)
+                        self.disqualified.append(ai)
+                    
+                    # Register winner
+                    winner = game.GetWinner()       
+                    
+                    # Grant awards
+                    winner.n_win += 1
+                    
+                    # record win locally
+                    local_wins[winner] += 1
                 
-                # Clean up disqualified AI
-                for ai in game.GetDisqualified():
-                    self.players.remove(ai)
-                    players.remove(ai)
-                    self.disqualified.append(ai)
-                
-                # Register winner
-                winner = game.GetWinner()       
-                
-                # Grant awards
-                winner.n_win += 1
-                
-                # record win locally
-                local_wins[winner] += 1
-            
-            # Update the ranks
-            for ai in players:
-                # Actual frequency of winnings
-                freq_win = float(local_wins[ai]) / self.table_round
-                
-                # Update ranks
-                ai.rank += freq_win * self.pool
+                # Update the ranks
+                for ai in players:
+                    # Actual frequency of winnings
+                    freq_win = float(local_wins[ai]) / self.table_round
+                    
+                    # Update ranks
+                    ai.rank += freq_win * self.pool
                 
             # write partial results for impatient people
-            if i % 200 == 0:
+            if i % 100 == 0:
                 self.LeaderboardCSV()
                 self.Leaderboard()
-                print("Concluded game %d of %d ."%(i, n_rounds))
+                print("Concluded round %d of %d ."%(i, self.n_round))
                 
         
 

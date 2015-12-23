@@ -35,6 +35,7 @@ class ZDGame:
 		# Table - Keep track of outcomes, regardless of color
 		self.brains = []
 		self.shotguns = []
+		self.visible_brains = []
 		
 		# Set pool
 		self.pool = 0
@@ -154,6 +155,7 @@ class ZDGame:
 		self.cup = list('GGGGGGYYYYRRR')
 
 		self.brains = []
+		self.visible_brains = []
 		self.shotguns = []
 		
 
@@ -178,6 +180,11 @@ class ZDGame:
 		       n (int) - number of dice to draw
 		'''
 		# pulls n dice from cup
+
+		if len(self.cup) < n:
+			self.cup.extend(self.visible_brains)
+			self.visible_brains = []
+
 		random.shuffle(self.cup)
 
 		out = self.cup[:n]
@@ -205,6 +212,7 @@ class ZDGame:
 
 			if outcome == 'B':
 				self.brains.append(d)
+				self.visible_brains.append(d)
 
 			elif outcome == 'S':
 				self.shotguns.append(d)

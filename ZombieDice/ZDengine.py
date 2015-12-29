@@ -153,7 +153,7 @@ class ZDGame:
 		   Refill the cup and clear the table
 		'''
 		self.cup = list('GGGGGGYYYYRRR')
-
+		self.hand = []
 		self.brains = []
 		self.visible_brains = []
 		self.shotguns = []

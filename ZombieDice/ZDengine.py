@@ -85,7 +85,7 @@ class ZDGame:
 				continue
 
 			# Iterate
-			while decision and len(self.shotguns) < 3 and len(self.hand) > 0:
+			while decision and len(self.shotguns) < 3:
 				if decision:
 					self.RollAgain()
 

@@ -224,7 +224,7 @@ class ZDTournament:
 
 if __name__ == "__main__":
     # Create a tournament with 4 players per table
-    tournament = ZDTournament(5000)
+    tournament = ZDTournament(10000)
     tournament.n_player = 4
     
     # Add players
@@ -238,7 +238,7 @@ if __name__ == "__main__":
     tournament.Leaderboard()
     
     # Create a tournament -- 1 vs 1
-    tournament = ZDTournament(5000)
+    tournament = ZDTournament(10000)
     tournament.n_player = 2
     
     # Add players

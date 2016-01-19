@@ -73,7 +73,9 @@ class ZDGame:
 
 			# Ask for decision
 			try:
+				beforetime = time()
 				decision = player.Play(pid, self.tallies, self.hand, self.cup, len(self.brains), len(self.shotguns))
+				player.clock += time() - beforetime
 			except:
 				# This player must be disqualified
 				player.disqualified = True
@@ -86,18 +88,23 @@ class ZDGame:
 
 			# Iterate
 			while decision and len(self.shotguns) < 3:
-				if decision:
-					self.RollAgain()
+				self.RollAgain()
 
 				# Ask for decision #########
 				# Before time
-				beforetime = time()
-				decision = player.Play(pid, self.tallies, self.hand, self.cup, len(self.brains), len(self.shotguns))
-				player.clock += time() - beforetime
+				try:
+					beforetime = time()
+					decision = player.Play(pid, self.tallies, self.hand, self.cup, len(self.brains), len(self.shotguns))
+					player.clock += time() - beforetime
+				except:
+					# This player must be disqualified
+					player.disqualified = True
+					break
 			
 			# Cash in
-			self.CashIn()
-			#print('Player %d scored %d for a total of %d'%(pid,len(self.brains), sum(self.tallies[pid])))
+			if player.disqualified == False:
+				self.CashIn()
+				#print('Player %d scored %d for a total of %d'%(pid,len(self.brains), sum(self.tallies[pid])))
 
 	def PlayGame(self):
 		''' 

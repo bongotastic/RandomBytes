@@ -77,7 +77,7 @@ if score < 120:
 
 
 # Close the window
-final = Text( Point(width/2, height/2) ,'Done! you are a %s'%(name))
+final = Text( Point(width/2, height/2) ,'Score=%d! you are a %s'%(score, name))
 final.setSize(20)
 final.draw(win)
 label_x.undraw()

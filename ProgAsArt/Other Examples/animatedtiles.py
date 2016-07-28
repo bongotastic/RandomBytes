@@ -28,6 +28,7 @@ win.setBackground('black')
 n_row = int(width / boxesize)
 n_col = int(height / boxesize)
 
+# This fills the window with tiles of random colours
 for col in range(n_col):
 	# Coordinate
 	minX = col * boxesize
